@@ -23,10 +23,8 @@ const groq = new OpenAI({
   baseURL: 'https://api.groq.com/openai/v1',
 });
 
-const githubProviderConfigKey =
-  process.env.NANGO_GITHUB_PROVIDER_CONFIG_KEY || 'github';
-const gmailProviderConfigKey =
-  process.env.NANGO_GMAIL_PROVIDER_CONFIG_KEY || 'google-mail';
+const githubProviderConfigKey = requireEnv('NANGO_GITHUB_PROVIDER_CONFIG_KEY');
+const gmailProviderConfigKey = requireEnv('NANGO_GMAIL_PROVIDER_CONFIG_KEY');
 const githubNotificationsLookbackDays = Number(
   process.env.GITHUB_NOTIFICATIONS_LOOKBACK_DAYS || '30'
 );

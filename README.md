@@ -21,6 +21,7 @@ A local TypeScript CLI assistant that combines GitHub notifications and Gmail me
 
 - Node.js 18+
 - Nango connection IDs for GitHub and Gmail
+- Nango integration IDs (provider config keys) for GitHub and Gmail
 - Groq API key
 
 ## Setup
@@ -49,11 +50,31 @@ Copy-Item .env.example .env
 - `GROQ_API_KEY`
 - `NANGO_GITHUB_CONNECTION_ID`
 - `NANGO_GMAIL_CONNECTION_ID`
+- `NANGO_GITHUB_PROVIDER_CONFIG_KEY` (from your Nango integration ID / provider config key)
+- `NANGO_GMAIL_PROVIDER_CONFIG_KEY` (from your Nango integration ID / provider config key)
+
+### Where To Get `.env` Values
+
+- `NANGO_SECRET_KEY`:
+Get this from your Nango account settings (server secret key).
+
+- `NANGO_GITHUB_CONNECTION_ID`:
+In Nango, open your connected GitHub account and copy the connection ID.
+
+- `NANGO_GMAIL_CONNECTION_ID`:
+In Nango, open your connected Google Mail account and copy the connection ID.
+
+- `NANGO_GITHUB_PROVIDER_CONFIG_KEY`:
+In Nango, open the GitHub integration and copy its integration ID (provider config key).
+
+- `NANGO_GMAIL_PROVIDER_CONFIG_KEY`:
+In Nango, open the Gmail integration and copy its integration ID (provider config key).
+
+- `GROQ_API_KEY`:
+Create or copy this from your Groq API keys page in the Groq console.
 
 Optional:
 
-- `NANGO_GMAIL_PROVIDER_CONFIG_KEY` (default: `google-mail`)
-- `NANGO_GITHUB_PROVIDER_CONFIG_KEY` (default: `github`)
 - `DEBUG` (`true` to print raw payloads)
 - `GITHUB_NOTIFICATIONS_LOOKBACK_DAYS` (default: `30`)
 
